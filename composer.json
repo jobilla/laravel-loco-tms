@@ -1,5 +1,5 @@
 {
-    "name": "jobilla/laravel-loco-tms",
+    "name": "taneryener/laravel-loco-tms",
     "description": "A Laravel convenience integration for the Loco translation management system",
     "type": "library",
     "require": {

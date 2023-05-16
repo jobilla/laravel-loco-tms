@@ -22,7 +22,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Jobilla\\Loco\\": "./src"
+            "Jobilla\\Loco\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jobilla\\Loco\\Tests\\": "tests/"
         }
     },
     "extra": {

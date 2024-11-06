@@ -32,9 +32,10 @@ class DownloadTranslations extends Command
      */
     public function handle(ApiClient $client, Translator $translator, FilesystemManager $storage)
     {
-        $res = $client->exportAll([
-            'ext' => 'json',
-        ]);
+        $res = $client->exportAll(array_merge(
+            config('loco.export_params', []),
+            ['ext' => 'json']
+        ));
 
         $translations = $this->dropEmptyString(json_decode((string)$res, JSON_OBJECT_AS_ARRAY));
         $fs = $storage->createLocalDriver(['root' => resource_path('lang')]);

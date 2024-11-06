@@ -44,11 +44,11 @@ class UploadTranslations extends Command
 
             $this->info("Sending $locale translations to Loco...");
             $locale = str_replace('_', '-', $locale);
-            $res = $client->import([
+            $res = $client->import(array_merge(config('loco.import_params', []), [
                 'locale' => $locale,
                 'ext' => 'json',
                 'data' => json_encode($translations)
-            ]);
+            ]));
             $this->info("✔ $locale upload complete: {$res['message']}");
         }
 

@@ -18,3 +18,13 @@ To publish the configuration file, run:
 ```sh
 php artisan vendor:publish --provider="Jobilla\Loco\LocoServiceProvider"
 ```
+
+There are two different endpoints used for import and export. It is possible to set different parameters on those endpoints. Parameters for export endpoint can be found [here](https://localise.biz/api/docs/export/exportall). Parameters for import endpoint can be found [here](https://localise.biz/api/docs/import/import). Those paramters can be set in configuration file of the package.
+
+For example, this is how order parameter can be set in configuration file:
+
+```php
+'export_params' => [
+        'order' => 'id',
+    ],
+```
